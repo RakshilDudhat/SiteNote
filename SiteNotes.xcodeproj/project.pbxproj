@@ -32,10 +32,8 @@
 		E081FEFF2A9718F000B730EF /* HomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FEFE2A9718F000B730EF /* HomeItem.swift */; };
 		E081FF062A971E0200B730EF /* TodayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF052A971E0200B730EF /* TodayModel.swift */; };
 		E081FF082A97285800B730EF /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF072A97285800B730EF /* ModelData.swift */; };
-		E081FF0A2A972A7E00B730EF /* TodayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF092A972A7E00B730EF /* TodayList.swift */; };
 		E081FF0E2A972C8900B730EF /* smallHouseRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF0D2A972C8900B730EF /* smallHouseRows.swift */; };
 		E081FF102A972CAA00B730EF /* SmallHouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF0F2A972CAA00B730EF /* SmallHouse.swift */; };
-		E081FF122A972EA100B730EF /* SmallHouseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF112A972EA100B730EF /* SmallHouseList.swift */; };
 		E081FF142A972F0500B730EF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF132A972F0500B730EF /* Home.swift */; };
 		E097C8002AA5CFA000B032FD /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E097C7FF2AA5CFA000B032FD /* ImagePickerView.swift */; };
 		E09A05C62A9C63CF0025CD9E /* CompleteBusinessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09A05C52A9C63CF0025CD9E /* CompleteBusinessList.swift */; };
@@ -53,8 +51,8 @@
 		E0BD15C62A9C7F3900FA9FEF /* EditDefaultProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BD15C52A9C7F3900FA9FEF /* EditDefaultProject.swift */; };
 		E0BD15C82A9C93AC00FA9FEF /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BD15C72A9C93AC00FA9FEF /* SettingItem.swift */; };
 		E0BD15CB2A9CB31600FA9FEF /* FindScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BD15CA2A9CB31600FA9FEF /* FindScreen.swift */; };
+		E0DAB4DD2AA740BB00BDC3B2 /* SmallHouseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB4DC2AA740BB00BDC3B2 /* SmallHouseList.swift */; };
 		E0DD05942A977F0C00A7226E /* LargeHouseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD05932A977F0C00A7226E /* LargeHouseRow.swift */; };
-		E0DD05972A9789F800A7226E /* LargeHouseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DD05962A9789F800A7226E /* LargeHouseList.swift */; };
 		E0E538E82AA6F96C00E65EF3 /* ProjectImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E538E72AA6F96C00E65EF3 /* ProjectImage.swift */; };
 		E0F471642AA207AE0097210B /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F471632AA207AE0097210B /* Status.swift */; };
 		E0F471662AA20CDA0097210B /* Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F471652AA20CDA0097210B /* Description.swift */; };
@@ -88,10 +86,8 @@
 		E081FEFE2A9718F000B730EF /* HomeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItem.swift; sourceTree = "<group>"; };
 		E081FF052A971E0200B730EF /* TodayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayModel.swift; sourceTree = "<group>"; };
 		E081FF072A97285800B730EF /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		E081FF092A972A7E00B730EF /* TodayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayList.swift; sourceTree = "<group>"; };
 		E081FF0D2A972C8900B730EF /* smallHouseRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smallHouseRows.swift; sourceTree = "<group>"; };
 		E081FF0F2A972CAA00B730EF /* SmallHouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallHouse.swift; sourceTree = "<group>"; };
-		E081FF112A972EA100B730EF /* SmallHouseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallHouseList.swift; sourceTree = "<group>"; };
 		E081FF132A972F0500B730EF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E097C7FF2AA5CFA000B032FD /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		E09A05C52A9C63CF0025CD9E /* CompleteBusinessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteBusinessList.swift; sourceTree = "<group>"; };
@@ -109,8 +105,8 @@
 		E0BD15C52A9C7F3900FA9FEF /* EditDefaultProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDefaultProject.swift; sourceTree = "<group>"; };
 		E0BD15C72A9C93AC00FA9FEF /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
 		E0BD15CA2A9CB31600FA9FEF /* FindScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindScreen.swift; sourceTree = "<group>"; };
+		E0DAB4DC2AA740BB00BDC3B2 /* SmallHouseList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallHouseList.swift; sourceTree = "<group>"; };
 		E0DD05932A977F0C00A7226E /* LargeHouseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeHouseRow.swift; sourceTree = "<group>"; };
-		E0DD05962A9789F800A7226E /* LargeHouseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeHouseList.swift; sourceTree = "<group>"; };
 		E0E538E72AA6F96C00E65EF3 /* ProjectImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectImage.swift; sourceTree = "<group>"; };
 		E0F471632AA207AE0097210B /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		E0F471652AA20CDA0097210B /* Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Description.swift; sourceTree = "<group>"; };
@@ -248,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				E081FEFE2A9718F000B730EF /* HomeItem.swift */,
-				E081FF092A972A7E00B730EF /* TodayList.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -257,7 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				E081FF0D2A972C8900B730EF /* smallHouseRows.swift */,
-				E081FF112A972EA100B730EF /* SmallHouseList.swift */,
+				E0DAB4DC2AA740BB00BDC3B2 /* SmallHouseList.swift */,
 			);
 			path = "Small House";
 			sourceTree = "<group>";
@@ -327,7 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				E0DD05932A977F0C00A7226E /* LargeHouseRow.swift */,
-				E0DD05962A9789F800A7226E /* LargeHouseList.swift */,
 			);
 			path = "Large House";
 			sourceTree = "<group>";
@@ -416,7 +410,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E081FF0A2A972A7E00B730EF /* TodayList.swift in Sources */,
 				E0F471642AA207AE0097210B /* Status.swift in Sources */,
 				E09EAE1F2A9E133200125663 /* RemindME.swift in Sources */,
 				E063EEED2A98A573002C2D8C /* TextFieldClearButton.swift in Sources */,
@@ -432,6 +425,7 @@
 				E09EAE0F2A9DA93C00125663 /* FilterScreen.swift in Sources */,
 				E09EAE1B2A9DCA2900125663 /* AppointementModel.swift in Sources */,
 				E0BD15C42A9C76B400FA9FEF /* SettingModel.swift in Sources */,
+				E0DAB4DD2AA740BB00BDC3B2 /* SmallHouseList.swift in Sources */,
 				E081FF142A972F0500B730EF /* Home.swift in Sources */,
 				E0E538E82AA6F96C00E65EF3 /* ProjectImage.swift in Sources */,
 				E09EAE132A9DBBB400125663 /* ViewExtension.swift in Sources */,
@@ -439,7 +433,6 @@
 				E0BD15C62A9C7F3900FA9FEF /* EditDefaultProject.swift in Sources */,
 				E09EAE192A9DC97800125663 /* AppointementItem.swift in Sources */,
 				E011F8732AA5FC3600AB4D4B /* NewTask.swift in Sources */,
-				E0DD05972A9789F800A7226E /* LargeHouseList.swift in Sources */,
 				E0679F182A99D1A90092A307 /* EditProjectFolder.swift in Sources */,
 				E081FEEE2A97107D00B730EF /* SiteNotesApp.swift in Sources */,
 				E0F471662AA20CDA0097210B /* Description.swift in Sources */,
@@ -455,7 +448,6 @@
 				E056CA072AA1B257005A983F /* Leads.swift in Sources */,
 				E05201B12AA31554009224E0 /* NewAppointement.swift in Sources */,
 				E081FF062A971E0200B730EF /* TodayModel.swift in Sources */,
-				E081FF122A972EA100B730EF /* SmallHouseList.swift in Sources */,
 				E081FF082A97285800B730EF /* ModelData.swift in Sources */,
 				E0BD15C22A9C758600FA9FEF /* Settings.swift in Sources */,
 				E05201AF2AA305FD009224E0 /* NewNotes.swift in Sources */,

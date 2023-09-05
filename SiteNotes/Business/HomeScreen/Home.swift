@@ -54,7 +54,7 @@ struct Home: View {
                             .padding(.leading, 16)
                     }
                 )
-                List {
+                Form {
                     //MARK: - TODAY
                     Section("TODAY") {
                         ForEach(modelData.todaydetalis, id: \.id) { todatDetalis in
@@ -66,7 +66,6 @@ struct Home: View {
                                     MyTask()
                                         .navigationBarTitle("Tasks", displayMode: .inline)
                                 }
-                            
                             } label: {
                                 HomeItem(todayDetalis: todatDetalis)
                             }
@@ -94,34 +93,17 @@ struct Home: View {
                             Text("Edit")
                                 .foregroundColor(.blue)
                         }
-                    }) {
+                    }.textCase(.none)) {
                         ForEach(modelData.smallHouse) { smallHouse in
                             NavigationLink {
                                 if smallHouse.id == 1 {
                                     Leads()
                                         .navigationBarHidden(true)
-//                                        .navigationBarTitle("Leads", displayMode: .inline)
-//                                        .toolbar {
-//                                            ToolbarItem(placement: .navigationBarTrailing) {
-//                                                Button {
-//                                                    print("Add")
-//                                                } label: {
-//                                                    Label("Add", image: "").labelStyle(.titleOnly)
-//                                                }
-
-//                                                NavigationLink {
-////                                                    Settings()
-//                                                } label: {
-//                                                    Label("Add", image: "").labelStyle(.titleOnly)
-//                                                }
-//                                            }
-//                                        }
                                 }
                             } label: {
                                 smallHouseRows(smallHouse: smallHouse).foregroundColor(.gray)
                             }
-
-                                .listRowSeparator(.hidden)
+                            .listRowSeparator(.hidden)
                         }
                     }
                     
@@ -145,7 +127,7 @@ struct Home: View {
                             Text("Edit")
                                 .foregroundColor(.blue)
                         }
-                    }) {
+                    }.textCase(.none)) {
                         ForEach(modelData.smallHouse) { largeHouse in
                             smallHouseRows(smallHouse: largeHouse)
                                 .listRowSeparator(.hidden)
@@ -172,7 +154,7 @@ struct Home: View {
                             Text("Edit")
                                 .foregroundColor(.blue)
                         }
-                    }) {
+                    }.textCase(.none)) {
                         ForEach(modelData.smallHouse) { speacialProject in
                             smallHouseRows(smallHouse: speacialProject)
                                 .listRowSeparator(.hidden)
@@ -194,7 +176,7 @@ struct Home: View {
                         .listRowSeparator(.hidden)
                         .listRowInsets(EdgeInsets())
                     }
-                } .listStyle(.plain)
+                } .listStyle(.plain).background(Color(red: 240/255, green: 241/255, blue: 246/255))
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

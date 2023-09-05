@@ -61,8 +61,11 @@ struct NewTask: View {
                         }.disabled(showDatePicker)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Done", role: .cancel) {
-                            dismiss()
+//                        Button("Done", role: .cancel) {
+//                            dismiss()
+//                        }
+                        NavigationLink(destination: Status().navigationBarHidden(true)) {
+                            Text("Done")
                         }
                     }
                 }
