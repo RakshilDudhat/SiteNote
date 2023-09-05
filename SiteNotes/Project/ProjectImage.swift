@@ -15,14 +15,14 @@ struct ProjectImage: View {
         NavigationView {
             ZStack {
                 Color(red: 240/255, green: 241/255, blue: 246/255)
-//                VStack {
+                VStack {
                 ZStack {
                     Image("test")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 375, height: 255)
                 }.frame(width: 325, height: 255)
-//                }.frame(maxWidth: .infinity, minHeight: 255, maxHeight: 255, alignment: .center).edgesIgnoringSafeArea(.all)
+                }.frame(maxWidth: .infinity, minHeight: 255, maxHeight: 255, alignment: .center).edgesIgnoringSafeArea(.all)
             }
             .edgesIgnoringSafeArea(.all)
             
