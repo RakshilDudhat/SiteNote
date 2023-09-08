@@ -52,14 +52,13 @@ struct EditAppointment: View {
                 Section("") {
                     HStack {
                         Text("Remind Me").font(.system(size: 17))
-                        Spacer(minLength: 130)
                         NavigationLink {
                             RemindME()
                                 .navigationBarTitle("Remind Me", displayMode: .inline)
                         } label: {
+                            Spacer()
                             Label("1 day before", image: "")
                                 .foregroundColor(Color.gray)
-                                .frame(width: 100, alignment: .leading)
                                 .labelStyle(.titleOnly)
                         }
                     }

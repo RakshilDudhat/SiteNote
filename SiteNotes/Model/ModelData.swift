@@ -67,4 +67,10 @@ final class ModelData: ObservableObject {
                                 Statu(id: 2, status: "Site Visit"),
                                 Statu(id: 3, status: "Installation"),
                                 Statu(id: 4, status: "Completed"),]
+    
+    @Published var arrContactData = [Contact(id: 1, name: "John Smith", moNumber: "+91 (XXX)XXX-XXXX", email: "test22@gmail.com", loction: "Zone/Block Level 1 Unit A3"),
+                                     Contact(id: 2, name: "John Smith", moNumber: "+91 (XXX)XXX-XXXX", email: "test23@gmail.com", loction: "Zone/Block Level 2 Unit A3"),
+                                     Contact(id: 3, name: "John Smith", moNumber: "+91 (XXX)XXX-XXXX", email: "test24@gmail.com", loction: "Zone/Block Level 3 Unit A3"),
+                                     Contact(id: 4, name: "John Smith", moNumber: "+91 (XXX)XXX-XXXX", email: "test25@gmail.com", loction: "Zone/Block Level 4 Unit A3"),
+                                     Contact(id: 5, name: "John Smith", moNumber: "+91 (XXX)XXX-XXXX", email: "test26@gmail.com", loction: "Zone/Block Level 5 Unit A3"),]
 }

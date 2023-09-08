@@ -9,14 +9,13 @@ import SwiftUI
 
 struct Home: View {
     
-    @Binding var text: String
+    @State var text: String
     @State var isPresentingFolder = false
     @State private var isEditing = false
     @State var isShowProjectFolde = true
     @EnvironmentObject var modelData: ModelData
     @State var isShowTODAY = false
     @State var showingProfile = false
-    @State private var isEditProjectFolderActive = false
     @State var isToggle = true
     @Environment(\.presentationMode) var presentationMode
     
@@ -69,26 +68,16 @@ struct Home: View {
                             } label: {
                                 HomeItem(todayDetalis: todatDetalis)
                             }
+                            .listRowSeparator(.hidden)
                         }
-                        .listRowSeparator(.hidden)
                     }
                     
                     //MARK: - Small Houses
                     Section(header: HStack {
                         Text("Small Houses")
                         Spacer()
-                        NavigationLink(isActive: $isEditProjectFolderActive) {
-                            EditProjectFolder()
-                                .navigationBarTitle("Edit Project Folder", displayMode: .automatic)
-                                .toolbar(content: {
-                                    ToolbarItem(placement: .navigationBarLeading) {
-                                        Button("Cancel") {
-                                            isEditProjectFolderActive = false
-                                            EditProjectFolder().presentationMode.wrappedValue.dismiss()
-                                        }.foregroundColor(.blue)
-                                    }
-                                })
-                                .navigationBarBackButtonHidden(true)
+                        NavigationLink {
+                            EditProjectFolder().navigationBarHidden(true)
                         } label: {
                             Text("Edit")
                                 .foregroundColor(.blue)
@@ -96,10 +85,8 @@ struct Home: View {
                     }.textCase(.none)) {
                         ForEach(modelData.smallHouse) { smallHouse in
                             NavigationLink {
-                                if smallHouse.id == 1 {
-                                    Leads()
-                                        .navigationBarHidden(true)
-                                }
+                                Leads()
+                                    .navigationBarHidden(true)
                             } label: {
                                 smallHouseRows(smallHouse: smallHouse).foregroundColor(.gray)
                             }
@@ -111,26 +98,21 @@ struct Home: View {
                     Section(header: HStack {
                         Text("Large Houses")
                         Spacer()
-                        NavigationLink(isActive: $isEditProjectFolderActive) {
-                            EditProjectFolder()
-                                .navigationBarTitle("Edit Project Folder", displayMode: .automatic)
-                                .toolbar(content: {
-                                    ToolbarItem(placement: .navigationBarLeading) {
-                                        Button("Cancel") {
-                                            isEditProjectFolderActive = false
-                                            EditProjectFolder().presentationMode.wrappedValue.dismiss()
-                                        }.foregroundColor(.blue)
-                                    }
-                                })
-                                .navigationBarBackButtonHidden(true)
+                        NavigationLink {
+                            EditProjectFolder().navigationBarHidden(true)
                         } label: {
                             Text("Edit")
                                 .foregroundColor(.blue)
                         }
                     }.textCase(.none)) {
                         ForEach(modelData.smallHouse) { largeHouse in
-                            smallHouseRows(smallHouse: largeHouse)
-                                .listRowSeparator(.hidden)
+                            NavigationLink {
+                                Leads()
+                                    .navigationBarHidden(true)
+                            } label: {
+                                smallHouseRows(smallHouse: largeHouse)
+                            }
+                            .listRowSeparator(.hidden)
                         }
                     }
                     
@@ -138,26 +120,21 @@ struct Home: View {
                     Section(header: HStack {
                         Text("Special Project - 123 Some Street")
                         Spacer()
-                        NavigationLink(isActive: $isEditProjectFolderActive) {
-                            EditProjectFolder()
-                                .navigationBarTitle("Edit Project Folder", displayMode: .automatic)
-                                .toolbar(content: {
-                                    ToolbarItem(placement: .navigationBarLeading) {
-                                        Button("Cancel") {
-                                            isEditProjectFolderActive = false
-                                            EditProjectFolder().presentationMode.wrappedValue.dismiss()
-                                        }.foregroundColor(.blue)
-                                    }
-                                })
-                                .navigationBarBackButtonHidden(true)
+                        NavigationLink {
+                            EditProjectFolder().navigationBarHidden(true)
                         } label: {
                             Text("Edit")
                                 .foregroundColor(.blue)
                         }
                     }.textCase(.none)) {
                         ForEach(modelData.smallHouse) { speacialProject in
-                            smallHouseRows(smallHouse: speacialProject)
-                                .listRowSeparator(.hidden)
+                            NavigationLink {
+                                Leads()
+                                    .navigationBarHidden(true)
+                            } label: {
+                                smallHouseRows(smallHouse: speacialProject)
+                            }
+                            .listRowSeparator(.hidden)
                         }
                     }
                     //MARK: - Toggle
@@ -203,7 +180,7 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(text: .constant(""))
+        Home(text: "")
             .environmentObject(ModelData())
     }
 }

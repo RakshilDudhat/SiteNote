@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FindScreen: View {
     
-    @Binding var text: String
+    @State var text: String
     @State private var isEditing = false
     @State var isFilterScreenOpen = false
     
@@ -69,15 +69,29 @@ struct FindScreen: View {
                         }
                     )
                     
-                    List {
-                        ForEach(ModelData().arrFindList) { findList in
-                            
-                            ProjectItem(findlist: findList)
-                        }
-                    }.listStyle(PlainListStyle())
-                }.onTapGesture(perform: {
-                    self.endTextEditing()
-                })
+                    Form {
+                            ForEach(ModelData().arrFindList, id: \.id) { lead in
+                                ZStack {
+                                        Rectangle()
+                                        .cornerRadius(8)
+                                        .frame(height: 104, alignment: .center)
+                                        .foregroundColor(.white)
+                                    NavigationLink {
+                                        ProjectDetalis(leads: FindList(id: lead.id, listImgName: lead.listImgName, listName: lead.listName, listImgCircle: lead.listImgCircle, street: lead.street))
+                                            .navigationBarHidden(true)
+                                    } label: {
+                                        ZStack {
+                                            ProjectItem(findlist: lead)
+                                        }
+                                    }.padding(.all, 8.0)
+                                }.padding(.all, 8.0)
+                            }
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(Color.clear)
+                            .listRowInsets(EdgeInsets())
+                        .background(Color(red: 240/255, green: 241/255, blue: 246/255))
+                    }
+                }
                 .navigationBarHidden(true)
             }
         }
@@ -86,6 +100,6 @@ struct FindScreen: View {
 
 struct FindScreen_Previews: PreviewProvider {
     static var previews: some View {
-        FindScreen(text: .constant(""))
+        FindScreen(text: "")
     }
 }

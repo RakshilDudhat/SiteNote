@@ -40,6 +40,6 @@ struct ProjectItem_Previews: PreviewProvider {
             ProjectItem(findlist: ModelData().arrFindList[0])
             ProjectItem(findlist: ModelData().arrFindList[1])
         }
-        .previewLayout(.fixed(width: 300, height: 100))
+        .previewLayout(.sizeThatFits)
     }
 }

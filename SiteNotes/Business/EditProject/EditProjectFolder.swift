@@ -10,43 +10,51 @@ import SwiftUI
 struct EditProjectFolder: View {
     
     @State var editProjectName = "Interior Desi"
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        ZStack {
-            List {
-                Section("BUSINESS") {
-                    TextField("Edit Project Name", text: $editProjectName).textFieldStyle(RoundedBorderTextFieldStyle())
-                        .modifier(TextFieldClearButton(text: $editProjectName))
-                        .multilineTextAlignment(.leading)
-                }.listRowSeparator(.hidden)
-                    .listRowBackground(Color.clear)
-                Section("Hide Folder") {
-                    ShowHiddenFolder()
-                }.textCase(.none)
-                
-                Section("Status") {
-                    VStack {
-                        List(ModelData().arrEditProjectStatus) { status in
-                            smallHouseRows(smallHouse: status)
-                                .listRowInsets(EdgeInsets())
-                                .listRowSeparator(.hidden)
-                        }
-                        .disabled(true)
-                        .listStyle(PlainListStyle())
-                    }.frame(minWidth: 200, maxWidth: 350, minHeight: 230, maxHeight: 230)
-                }.textCase(.none)
-                
-                Section("Delete Folder") {
-                    DeleteFolderRow()
+        NavigationView {
+            ZStack {
+                Form {
+                    Section("BUSINESS") {
+                        TextField("Edit Project Name", text: $editProjectName).textFieldStyle(RoundedBorderTextFieldStyle())
+                            .modifier(TextFieldClearButton(text: $editProjectName))
+                            .multilineTextAlignment(.leading)
+                    }.listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                    Section("Hide Folder") {
+                        ShowHiddenFolder()
+                    }.textCase(.none)
+                    
+                    Section("Status") {
+                        VStack {
+                            List(ModelData().arrEditProjectStatus) { status in
+                                smallHouseRows(smallHouse: status)
+                                    .listRowInsets(EdgeInsets())
+                                    .listRowSeparator(.hidden)
+                            }
+                            .disabled(true)
+                            .listStyle(PlainListStyle())
+                        }.frame(minWidth: 200, maxWidth: 350, minHeight: 230, maxHeight: 230)
+                    }.textCase(.none)
+                    
+                    Section("Delete Folder") {
+                        DeleteFolderRow().buttonStyle(.borderless)
+                    }.textCase(.none)
                 }
-                .textCase(.none)
-                .listRowSeparator(.hidden)
-                .listRowBackground(Color.clear)
             }
-        }.onTapGesture(perform: {
-            self.endTextEditing()
-        })
+            .navigationBarTitle("Edit Project Folder", displayMode: .inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel", role: .cancel) {
+                        dismiss()
+                    }
+                }
+            }
+        }
+    }
+    private func dismiss() {
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

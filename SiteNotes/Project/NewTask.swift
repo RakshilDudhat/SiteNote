@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct NewTask: View {
     
@@ -19,6 +20,7 @@ struct NewTask: View {
     @State private var shouldPresentCamera = false
     @State var selectedDate: Date = Date()
     @State private var showDatePicker = false
+    @State private var isDetailViewPresented = false
     
     var body: some View {
         NavigationView {
@@ -61,12 +63,10 @@ struct NewTask: View {
                         }.disabled(showDatePicker)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-//                        Button("Done", role: .cancel) {
-//                            dismiss()
-//                        }
-                        NavigationLink(destination: Status().navigationBarHidden(true)) {
-                            Text("Done")
-                        }
+                        Button("Done", role: .cancel) {
+                            dismiss()
+                        }.disabled(showDatePicker)
+                        .sheet(isPresented: $isDetailViewPresented) {}
                     }
                 }
                 if showDatePicker {

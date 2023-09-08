@@ -14,6 +14,7 @@ struct NewAppointement: View {
     @State var date = ""
     @State var selectedDate: Date = Date()
     @State private var showDatePicker = false
+    @State private var isDetailViewPresented = false
     
     var body: some View {
         NavigationView {
@@ -45,8 +46,7 @@ struct NewAppointement: View {
                                 .frame(height: 50, alignment: .center)
                             VStack(alignment: .leading) {
                                 HStack {
-                                    Text("Remind Me")
-                                    Spacer()
+                                    Text("Remind Me").font(.system(size: 17))
                                     NavigationLink {
                                         RemindME().navigationBarTitle("Remind Me", displayMode: .inline)
                                     } label: {
@@ -55,7 +55,6 @@ struct NewAppointement: View {
                                             .foregroundColor(Color.gray)
                                             .labelStyle(.titleOnly)
                                     }
-                                    
                                 }
                             }.padding(.all, 12)
                         }
@@ -76,6 +75,7 @@ struct NewAppointement: View {
                             Button("Done", role: .cancel) {
                                 dismiss()
                             }.disabled(showDatePicker)
+                            .sheet(isPresented: $isDetailViewPresented) {}
                         }
                     }
                 if showDatePicker {

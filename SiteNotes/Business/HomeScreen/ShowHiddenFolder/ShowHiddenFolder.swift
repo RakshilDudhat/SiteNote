@@ -12,14 +12,12 @@ struct ShowHiddenFolder: View {
     @State var isToggle = true
     
     var body: some View {
-//        NavigationView {
             HStack {
                 Toggle(isOn: $isToggle) {
                     Text("Show Hidden Folders")
                         .font(.system(size: 17))
                 }
             }.frame(minWidth: 200, maxWidth: 400)
-//        }
     }
 }
 

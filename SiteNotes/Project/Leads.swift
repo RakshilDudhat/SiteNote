@@ -17,17 +17,24 @@ struct Leads: View {
                 List {
                     Section("INTERIOR DESIGN") {
                         ForEach(ModelData().arrLead, id: \.id) { lead in
-                            NavigationLink {
-                                ProjectDetalis(leads: FindList(id: lead.id, listImgName: lead.listImgName, listName: lead.listName, listImgCircle: lead.listImgCircle, street: lead.street))
-                                    .navigationBarHidden(true)
-                            } label: {
-                                ProjectItem(findlist: lead)
-                                    .padding(.all, 8.0)
-                            }
+                            ZStack {
+                                    Rectangle()
+                                    .cornerRadius(8)
+                                    .frame(height: 104, alignment: .center)
+                                    .foregroundColor(.white)
+                                NavigationLink {
+                                    ProjectDetalis(leads: FindList(id: lead.id, listImgName: lead.listImgName, listName: lead.listName, listImgCircle: lead.listImgCircle, street: lead.street))
+                                        .navigationBarHidden(true)
+                                } label: {
+                                    ZStack {
+                                        ProjectItem(findlist: lead)
+                                    }
+                                }.padding(.all, 8.0)
+                            }.padding(.all, 8.0)
                         }
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
-                        .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+                        .listRowInsets(EdgeInsets())
                     }
                     .background(Color(red: 240/255, green: 241/255, blue: 246/255))
                 }

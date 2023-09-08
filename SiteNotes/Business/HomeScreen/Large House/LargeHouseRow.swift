@@ -27,6 +27,6 @@ struct LargeHouseRow_Previews: PreviewProvider {
             LargeHouseRow(smallHouse: ModelData().smallHouse[0])
             LargeHouseRow(smallHouse: ModelData().smallHouse[1])
         }
-        .previewLayout(.fixed(width: 400, height: 70))
+        .previewLayout(.sizeThatFits)
     }
 }

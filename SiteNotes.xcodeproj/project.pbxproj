@@ -37,6 +37,11 @@
 		E081FF142A972F0500B730EF /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E081FF132A972F0500B730EF /* Home.swift */; };
 		E097C8002AA5CFA000B032FD /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E097C7FF2AA5CFA000B032FD /* ImagePickerView.swift */; };
 		E09A05C62A9C63CF0025CD9E /* CompleteBusinessList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09A05C52A9C63CF0025CD9E /* CompleteBusinessList.swift */; };
+		E09A23D12AAAEB98005CB79E /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09A23D02AAAEB98005CB79E /* Contacts.swift */; };
+		E09A23D52AAB155B005CB79E /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09A23D42AAB155B005CB79E /* ContactModel.swift */; };
+		E09A23D72AAB1722005CB79E /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09A23D62AAB1722005CB79E /* ContactItem.swift */; };
+		E09A23D92AAB1D61005CB79E /* NewContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09A23D82AAB1D61005CB79E /* NewContact.swift */; };
+		E09A23DC2AAB262D005CB79E /* EditContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09A23DB2AAB262D005CB79E /* EditContact.swift */; };
 		E09EAE0B2A9DA2A800125663 /* ProjectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EAE0A2A9DA2A800125663 /* ProjectItem.swift */; };
 		E09EAE0D2A9DA3F800125663 /* FindListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EAE0C2A9DA3F800125663 /* FindListModel.swift */; };
 		E09EAE0F2A9DA93C00125663 /* FilterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EAE0E2A9DA93C00125663 /* FilterScreen.swift */; };
@@ -91,6 +96,11 @@
 		E081FF132A972F0500B730EF /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E097C7FF2AA5CFA000B032FD /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		E09A05C52A9C63CF0025CD9E /* CompleteBusinessList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteBusinessList.swift; sourceTree = "<group>"; };
+		E09A23D02AAAEB98005CB79E /* Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		E09A23D42AAB155B005CB79E /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		E09A23D62AAB1722005CB79E /* ContactItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
+		E09A23D82AAB1D61005CB79E /* NewContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContact.swift; sourceTree = "<group>"; };
+		E09A23DB2AAB262D005CB79E /* EditContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContact.swift; sourceTree = "<group>"; };
 		E09EAE0A2A9DA2A800125663 /* ProjectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectItem.swift; sourceTree = "<group>"; };
 		E09EAE0C2A9DA3F800125663 /* FindListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindListModel.swift; sourceTree = "<group>"; };
 		E09EAE0E2A9DA93C00125663 /* FilterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterScreen.swift; sourceTree = "<group>"; };
@@ -197,6 +207,7 @@
 				E011F8712AA5F7E300AB4D4B /* Info.plist */,
 				E081FEED2A97107D00B730EF /* SiteNotesApp.swift */,
 				E081FEEF2A97107D00B730EF /* ContentView.swift */,
+				E09A23DA2AAB2612005CB79E /* Contact */,
 				E045D6CD2AA1C41900DD4929 /* Project */,
 				E00E56632AA073DE0065719E /* MyTasks */,
 				E09EAE172A9DC95700125663 /* AppointementView */,
@@ -255,6 +266,17 @@
 				E0DAB4DC2AA740BB00BDC3B2 /* SmallHouseList.swift */,
 			);
 			path = "Small House";
+			sourceTree = "<group>";
+		};
+		E09A23DA2AAB2612005CB79E /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				E09A23D02AAAEB98005CB79E /* Contacts.swift */,
+				E09A23D62AAB1722005CB79E /* ContactItem.swift */,
+				E09A23D82AAB1D61005CB79E /* NewContact.swift */,
+				E09A23DB2AAB262D005CB79E /* EditContact.swift */,
+			);
+			path = Contact;
 			sourceTree = "<group>";
 		};
 		E09EAE142A9DBBF500125663 /* Extension */ = {
@@ -336,6 +358,7 @@
 				E09EAE0C2A9DA3F800125663 /* FindListModel.swift */,
 				E09EAE1A2A9DCA2900125663 /* AppointementModel.swift */,
 				E00E56662AA074830065719E /* Task.swift */,
+				E09A23D42AAB155B005CB79E /* ContactModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -413,11 +436,14 @@
 				E0F471642AA207AE0097210B /* Status.swift in Sources */,
 				E09EAE1F2A9E133200125663 /* RemindME.swift in Sources */,
 				E063EEED2A98A573002C2D8C /* TextFieldClearButton.swift in Sources */,
+				E09A23D92AAB1D61005CB79E /* NewContact.swift in Sources */,
 				E081FEF02A97107D00B730EF /* ContentView.swift in Sources */,
 				E045D6CF2AA1C44B00DD4929 /* ProjectDetalis.swift in Sources */,
+				E09A23D72AAB1722005CB79E /* ContactItem.swift in Sources */,
 				E00E56622AA072000065719E /* MyTask.swift in Sources */,
 				E09EAE0B2A9DA2A800125663 /* ProjectItem.swift in Sources */,
 				E00E56652AA074690065719E /* TaskItem.swift in Sources */,
+				E09A23D12AAAEB98005CB79E /* Contacts.swift in Sources */,
 				E00B82002A986A4A00235B2D /* ShowHiddenFolder.swift in Sources */,
 				E09EAE1D2A9DEC1B00125663 /* EditAppointment.swift in Sources */,
 				E0BD15CB2A9CB31600FA9FEF /* FindScreen.swift in Sources */,
@@ -445,9 +471,11 @@
 				E081FEFC2A97131800B730EF /* SplashView.swift in Sources */,
 				E05201AB2AA2E901009224E0 /* TextView.swift in Sources */,
 				E09EAE162A9DC06300125663 /* AppointmentList.swift in Sources */,
+				E09A23DC2AAB262D005CB79E /* EditContact.swift in Sources */,
 				E056CA072AA1B257005A983F /* Leads.swift in Sources */,
 				E05201B12AA31554009224E0 /* NewAppointement.swift in Sources */,
 				E081FF062A971E0200B730EF /* TodayModel.swift in Sources */,
+				E09A23D52AAB155B005CB79E /* ContactModel.swift in Sources */,
 				E081FF082A97285800B730EF /* ModelData.swift in Sources */,
 				E0BD15C22A9C758600FA9FEF /* Settings.swift in Sources */,
 				E05201AF2AA305FD009224E0 /* NewNotes.swift in Sources */,

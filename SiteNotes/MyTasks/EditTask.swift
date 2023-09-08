@@ -10,14 +10,11 @@ import SwiftUI
 struct EditTask: View {
     
     @State var task: Task
-//    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Environment(\.presentationMode) var presentation
     @State var isToggle = true
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-//        ZStack {
         NavigationView {
-            
             List {
                 Section("") {
                     HStack {
@@ -79,10 +76,25 @@ struct EditTask: View {
                 }.textCase(.none)
                 
             }.buttonStyle(.borderless)
-                .navigationBarHidden(true)
+                .navigationBarTitle("Edit Task", displayMode: .inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Cancel", role: .cancel) {
+                            dismiss()
+                        }
+                    }
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Done", role: .cancel) {
+                            dismiss()
+                        }
+                    }
+                }
         }
-//        }
     }
+    private func dismiss() {
+         presentationMode.wrappedValue.dismiss()
+     }
 }
 
 struct EditTask_Previews: PreviewProvider {

@@ -12,6 +12,7 @@ struct NewNotes: View {
     @Environment(\.presentationMode) var presentationMode
     @State var name: String = "Lorem lpusm"
     @State var description: String = ""
+    @State private var isDetailViewPresented = false
     
     var body: some View {
         ZStack {
@@ -44,7 +45,7 @@ struct NewNotes: View {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button("Done", role: .cancel) {
                                 dismiss()
-                            }
+                            }.sheet(isPresented: $isDetailViewPresented) {}
                         }
                     }
             }

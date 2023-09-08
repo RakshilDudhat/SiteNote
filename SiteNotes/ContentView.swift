@@ -27,12 +27,12 @@ struct ContentView: View {
         
         TabView(selection: $selection){
             //MARK: - Home Tab
-            Home(text: .constant(""))
+            Home(text: "")
                 .tabItem({
                     Label("Home", systemImage: "house")
                 })
                 .tag(tab.Home)
-            FindScreen(text: .constant(""))
+            FindScreen(text: "")
                 .tabItem({
                     Label("Find", systemImage: "magnifyingglass")
                 })
@@ -43,6 +43,12 @@ struct ContentView: View {
                     Label("Setting", systemImage: "gear")
                 })
                 .tag(tab.Setting)
+            //MARK: - Contanct Tab
+            Contacts()
+                .tabItem({
+                    Label("Contacts", systemImage: "person.crop.square")
+                })
+                .tag(tab.Contacts)
         }
         
         

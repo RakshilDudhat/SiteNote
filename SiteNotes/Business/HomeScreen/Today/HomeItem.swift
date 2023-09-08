@@ -31,6 +31,6 @@ struct HomeItem_Previews: PreviewProvider {
             HomeItem(todayDetalis: ModelData().todaydetalis[0])
             HomeItem(todayDetalis: ModelData().todaydetalis[1])
         }
-            .previewLayout(.fixed(width: 350, height: 70))
+            .previewLayout(.sizeThatFits)
     }
 }
