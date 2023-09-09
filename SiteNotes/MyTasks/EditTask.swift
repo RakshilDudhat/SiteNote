@@ -99,6 +99,6 @@ struct EditTask: View {
 
 struct EditTask_Previews: PreviewProvider {
     static var previews: some View {
-        EditTask(task: Task(tittleName: "", name: "", subTittle: "", image1: "", image2: "", time: "", CompleteAndActive: ""))
+        EditTask(task: Task(id: 0, tittleName: "", street: "", name: "", subTittle: "", image1: "", image2: "", time: "", CompleteAndActive: ""))
     }
 }

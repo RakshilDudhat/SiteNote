@@ -9,8 +9,9 @@ import Foundation
 
 struct Task: Hashable, Identifiable {
     
-    var id = UUID() 
+    var id: Int
     var tittleName: String
+    var street: String
     var name: String
     var subTittle: String
     var image1: String

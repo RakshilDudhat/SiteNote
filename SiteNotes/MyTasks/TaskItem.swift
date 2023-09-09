@@ -11,20 +11,25 @@ struct TaskItem: View {
     
     let task: Task
     @State var showingAlert = false
+    @State var isNavigation = false
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 6) {
             HStack {
                 Text(task.tittleName).font(.headline)
                 Spacer()
                 Button {
                     print("hello")
+                    isNavigation.toggle()
                 } label: {
                     Image("IC_OpenInNew")
                         .frame(width: 28, height: 28)
                         .aspectRatio(contentMode: .fill)
                 }
-            }.frame(maxWidth: .infinity, maxHeight: 30)
+                .background(NavigationLink("", destination: ProjectDetalis(leads: FindList(id: task.id, listImgName: "IC_Find2", listName: task.name, listImgCircle: "IC_Check", street: task.street)), isActive: $isNavigation).opacity(0))
+            }.buttonStyle(.borderless)
+                
+            .frame(maxWidth: .infinity, maxHeight: 30)
             Rectangle()
                 .frame(maxWidth: .infinity, maxHeight: 1)
                 .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
@@ -45,7 +50,6 @@ struct TaskItem: View {
                 }
             }
             HStack {
-                
                 Image(task.image1)
                     .resizable()
                     .frame(width: 20, height: 20)
@@ -73,7 +77,7 @@ struct TaskItem: View {
                     }
                 }
             }
-        }
+        }.buttonStyle(.borderless)
         .alert(isPresented: $showingAlert) {
             let firstButton = Alert.Button.default(Text("Cancel")) { showingAlert = false }
             let secondButton = Alert.Button.destructive(Text("Delete")) { showingAlert = false }
@@ -88,6 +92,6 @@ struct TaskItem_Previews: PreviewProvider {
             TaskItem(task: ModelData().arrTask[0])
             TaskItem(task: ModelData().arrTask[2])
         }
-        .previewLayout(.fixed(width: 240, height: 200))
+        .previewLayout(.sizeThatFits)
     }
 }

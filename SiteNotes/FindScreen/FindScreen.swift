@@ -70,25 +70,25 @@ struct FindScreen: View {
                     )
                     
                     Form {
-                            ForEach(ModelData().arrFindList, id: \.id) { lead in
-                                ZStack {
-                                        Rectangle()
-                                        .cornerRadius(8)
-                                        .frame(height: 104, alignment: .center)
-                                        .foregroundColor(.white)
-                                    NavigationLink {
-                                        ProjectDetalis(leads: FindList(id: lead.id, listImgName: lead.listImgName, listName: lead.listName, listImgCircle: lead.listImgCircle, street: lead.street))
-                                            .navigationBarHidden(true)
-                                    } label: {
-                                        ZStack {
-                                            ProjectItem(findlist: lead)
-                                        }
-                                    }.padding(.all, 8.0)
+                        ForEach(ModelData().arrFindList, id: \.id) { lead in
+                            ZStack {
+                                Rectangle()
+                                    .cornerRadius(8)
+                                    .frame(height: 104, alignment: .center)
+                                    .foregroundColor(.white)
+                                NavigationLink {
+                                    ProjectDetalis(leads: FindList(id: lead.id, listImgName: lead.listImgName, listName: lead.listName, listImgCircle: lead.listImgCircle, street: lead.street))
+                                        .navigationBarHidden(true)
+                                } label: {
+                                    ZStack {
+                                        ProjectItem(findlist: lead)
+                                    }
                                 }.padding(.all, 8.0)
-                            }
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(Color.clear)
-                            .listRowInsets(EdgeInsets())
+                            }.padding(.all, 8.0)
+                        }
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets())
                         .background(Color(red: 240/255, green: 241/255, blue: 246/255))
                     }
                 }

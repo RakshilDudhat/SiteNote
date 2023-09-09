@@ -9,13 +9,14 @@ import SwiftUI
 
 struct MyTask: View {
     
+    
     var body: some View {
         ZStack {
-            List {
+            Form {
                 Section("TODAY") {
-                    ForEach(ModelData().arrTask, id: \.self) { task in
+                    ForEach(ModelData().arrTask, id: \.id) { task in
                         TaskItem(task: task)
-                            .overlay(NavigationLink(destination: EditTask(task: Task(tittleName: task.tittleName, name: task.name, subTittle: task.subTittle, image1: task.image1, image2: task.image2, time: task.time, CompleteAndActive: task.CompleteAndActive)).navigationBarHidden(true)) {}.opacity(0))
+                            .background(NavigationLink(destination: EditTask(task: task).navigationBarHidden(true), label: {}).opacity(0))
                     }
                 }
                 .listRowSeparator(.hidden)

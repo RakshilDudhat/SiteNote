@@ -52,10 +52,10 @@ final class ModelData: ObservableObject {
                                                 Notification(timing: "1 hour before"),
                                                 Notification(timing: "1 day before"),]
     
-    @Published var arrTask: [Task] = [Task(tittleName: "Interior Design : Lorem Ip...", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),
-                                      Task(tittleName: "Interior Design : Lorem Ip...", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),
-                                      Task(tittleName: "Interior Design : Lorem Ip...", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Active"),
-                                      Task(tittleName: "Interior Design : Lorem Ip...", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),]
+    @Published var arrTask: [Task] = [Task(id: 1, tittleName: "Interior Design : Lorem Ip...", street: "6627 192A Street", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2:                                       "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),
+                                      Task(id: 2, tittleName: "Interior Design : Lorem Ip...", street: "6627 192A Street", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),
+                                      Task(id: 3, tittleName: "Interior Design : Lorem Ip...", street: "6627 192A Street", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Active"),
+                                      Task(id: 4, tittleName: "Interior Design : Lorem Ip...", street: "6627 192A Street", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),]
     
     @Published var arrLead: [FindList] = [FindList(id: 1, listImgName: "IC_Find1", listName: "5132 Alderfield place, west vencouver", listImgCircle: "IC_Check", street: "6627 192A Street"),
                                           FindList(id: 2, listImgName: "IC_Find3", listName: "5132 Alderfield place, west vencouver", listImgCircle: "IC_Check", street: "6627 192A Street"),

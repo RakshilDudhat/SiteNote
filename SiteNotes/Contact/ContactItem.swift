@@ -23,21 +23,14 @@ struct ContactItem: View {
                     isEditViewActive.toggle()
                 }.buttonStyle(.borderless)
                 .overlay(NavigationLink("", destination: EditContact(fetchData: Contact(id: contact.id, name: contact.name, moNumber: contact.moNumber, email: contact.email, loction: contact.loction)).navigationBarHidden(true), isActive: $isEditViewActive).opacity(0))
-
-//                Button {
-//                    print("Edit")
-//                } label: {
-//                    Image("Edit")
-//                        .resizable()
-//                        .frame(width: 24, height: 24)
-//                }
                 
                 Button {
                     print("Delete")
                     showingAlert = true
                 } label: {
                     Image(systemName: "trash")
-                        .frame(width: 24, height: 24)
+//                        .resizable()
+//                        .frame(width: 24, height: 24)
                         .foregroundColor(.red)
                 }
             }
