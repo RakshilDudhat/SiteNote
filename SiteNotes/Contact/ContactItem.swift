@@ -10,6 +10,7 @@ import SwiftUI
 struct ContactItem: View {
     
     var contact: Contact
+    @State private var action: Int? = 0
     @State var showingAlert = false
     @State private var isEditViewActive = false
     
@@ -18,10 +19,13 @@ struct ContactItem: View {
             HStack {
                 Text(contact.name)
                 Spacer()
-                
-                Button("\(Image("Edit"))") {
+                Button {
                     isEditViewActive.toggle()
-                }.buttonStyle(.borderless)
+                } label: {
+                    Image("Edit")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                }
                 .overlay(NavigationLink("", destination: EditContact(fetchData: Contact(id: contact.id, name: contact.name, moNumber: contact.moNumber, email: contact.email, loction: contact.loction)).navigationBarHidden(true), isActive: $isEditViewActive).opacity(0))
                 
                 Button {
@@ -29,8 +33,9 @@ struct ContactItem: View {
                     showingAlert = true
                 } label: {
                     Image(systemName: "trash")
-//                        .resizable()
-//                        .frame(width: 24, height: 24)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .aspectRatio(contentMode: .fill)
                         .foregroundColor(.red)
                 }
             }

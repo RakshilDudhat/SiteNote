@@ -9,14 +9,7 @@ import SwiftUI
 
 struct NewProjectFolder: View {
     
-    @State var businessName: String = "Business Name"
-    @State var leadName: String = "lead Name"
-    @State var siteVisit: String = "Site Visit"
-    @State var job: String = "Job"
-    @State var installation: String = "Installation"
-    @State var completed: String = "Completed"
-    @State var isScrollDisable: Bool = false
-    @State var isEditing = false
+    @State var arrNewProjectList = ["Business Name", "lead Name", "Site Visit", "Job", "Installation", "Completed"]
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -24,27 +17,24 @@ struct NewProjectFolder: View {
             VStack {
                 List {
                     Section("PROJECT FOLDER NAME") {
-                        TextField("Business Name", text: $businessName).textFieldStyle(RoundedBorderTextFieldStyle())
-                            .modifier(TextFieldClearButton(text: $businessName))
+                        TextField("Business Name", text: $arrNewProjectList[0]).textFieldStyle(RoundedBorderTextFieldStyle())
+                            .modifier(TextFieldClearButton(text: $arrNewProjectList[0]))
                             .multilineTextAlignment(.leading)
                         
                     } .listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
                     Section("Project Steps") {
                         Group {
-                            TextField("Lead Name", text: $leadName).textFieldStyle(RoundedBorderTextFieldStyle())
-                                .multilineTextAlignment(.leading)
-                            TextField("Site Visit", text: $siteVisit).textFieldStyle(RoundedBorderTextFieldStyle())
-                                .multilineTextAlignment(.leading)
-                            TextField("Job", text: $job).textFieldStyle(RoundedBorderTextFieldStyle())
-                                .multilineTextAlignment(.leading)
-                            TextField("Installation", text: $installation).textFieldStyle(RoundedBorderTextFieldStyle())
-                                .multilineTextAlignment(.leading)
-                            TextField("Completion", text: $completed).textFieldStyle(RoundedBorderTextFieldStyle())
-                                .multilineTextAlignment(.leading)
-                        }
-                    }.swipeActions(content: {
-                        Button {
+                            TextField("Lead Name", text: $arrNewProjectList[1])
+                            TextField("Site Visit", text: $arrNewProjectList[2])
+                            TextField("Job", text: $arrNewProjectList[3])
+                            TextField("Installation", text: $arrNewProjectList[4])
+                            TextField("Completion", text: $arrNewProjectList[5])
+                        }.textFieldStyle(RoundedBorderTextFieldStyle())
+                        .multilineTextAlignment(.leading)
+                    }.textCase(.none)
+                    .swipeActions(content: {
+                        Button(role: .destructive) {
                             print("Hello")
                         } label: {
                             Label("Delete", systemImage: "")

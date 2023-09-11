@@ -10,12 +10,8 @@ import SwiftUI
 struct Home: View {
     
     @State var text: String
-    @State var isPresentingFolder = false
     @State private var isEditing = false
-    @State var isShowProjectFolde = true
     @EnvironmentObject var modelData: ModelData
-    @State var isShowTODAY = false
-    @State var showingProfile = false
     @State var isToggle = true
     @Environment(\.presentationMode) var presentationMode
     
@@ -60,10 +56,10 @@ struct Home: View {
                             NavigationLink {
                                 if todatDetalis.id == 1 {
                                     AppointmentList()
-                                        .navigationBarTitle("Appointement", displayMode: .inline)
+                                        .navigationBarHidden(true)
                                 } else {
                                     MyTask()
-                                        .navigationBarTitle("Tasks", displayMode: .inline)
+                                        .navigationBarHidden(true)
                                 }
                             } label: {
                                 HomeItem(todayDetalis: todatDetalis)

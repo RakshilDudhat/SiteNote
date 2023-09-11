@@ -9,18 +9,41 @@ import SwiftUI
 
 struct MyTask: View {
     
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        ZStack {
-            Form {
-                Section("TODAY") {
-                    ForEach(ModelData().arrTask, id: \.id) { task in
-                        TaskItem(task: task)
-                            .background(NavigationLink(destination: EditTask(task: task).navigationBarHidden(true), label: {}).opacity(0))
+        NavigationView {
+            ZStack {
+                Form {
+                    Section("TODAY") {
+                        ForEach(ModelData().arrTask, id: \.id) { task in
+                            ZStack {
+                                Rectangle()
+                                    .cornerRadius(8)
+                                    .frame(height: 130, alignment: .center)
+                                    .foregroundColor(.white)
+                                ZStack {
+                                    TaskItem(task: task)
+                                }.padding(.all, 8.0)
+                            }.padding(.bottom, 8.0)
+                        }
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets())
+                    }
+                    .listRowSeparator(.hidden)
+                }.buttonStyle(.borderless)
+            }
+            .navigationBarTitle("Tasks", displayMode: .inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image("Back")
                     }
                 }
-                .listRowSeparator(.hidden)
-            }.buttonStyle(.borderless)
+            }
         }
     }
 }

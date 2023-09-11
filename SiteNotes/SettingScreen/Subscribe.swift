@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Subscribe: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         ZStack {
             Color(red: 240/255, green: 241/255, blue: 246/255)
@@ -17,7 +20,7 @@ struct Subscribe: View {
                         VStack(alignment: .leading, spacing: 32) {
                             VStack(alignment: .leading, spacing: 4) {
                                 Text("Please Subscribe to access this feature").font(Font.custom("Subhead", size: 17))
-                                Text("You will get ads free access to the app and get feature to forwad notes and tasks as an emal.").font(Font.custom("Footnote", size: 13)).foregroundColor(Color(red: 134/255, green: 142/255, blue: 150/255))
+                                Text("You will get ads free access to the app and get feature to forwad notes and tasks as an email.").font(Font.custom("Footnote", size: 13)).foregroundColor(Color(red: 134/255, green: 142/255, blue: 150/255))
                             }
                             
                             VStack(alignment: .leading, spacing: 8) {
@@ -29,19 +32,27 @@ struct Subscribe: View {
                     VStack(alignment: .center) {
                         Button("Subscribe") {
                             print("Subscribe")
+                            presentationMode.wrappedValue.dismiss()
                         }.frame(maxWidth: .infinity).foregroundColor(.white)
                     }.frame(maxWidth: .infinity, maxHeight: 50).background(Color.blue).cornerRadius(10)
                         .listRowBackground(Color.clear)
                     
                     VStack(alignment: .center) {
                         Button("Cancel") {
-                            print("Cancel")
+                            print("Dismiss")
+                            presentationMode.wrappedValue.dismiss()
                         }.frame(maxWidth: .infinity).foregroundColor(.black)
                     }.frame(maxWidth: .infinity, maxHeight: 50).background(Color.white).cornerRadius(10)
                         .listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
                 }
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image("Back")
+            }))
         }
     }
 }

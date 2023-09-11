@@ -43,9 +43,8 @@ struct ProjectDetalis: View {
                                                 .frame(width: 24, height: 24)
                                         }
                                         
-                                        
                                         Button {
-                                            print("Edit")
+                                            print("Trash")
                                         } label: {
                                             Image(systemName: "trash")
                                                 .resizable()
@@ -92,7 +91,7 @@ struct ProjectDetalis: View {
                                 .frame(height: 89)
                             VStack(alignment: .leading) {
                                 NavigationLink {
-                                    Status()
+                                    Status().navigationBarHidden(true)
                                 } label: {
                                     Text("Client: John Smith").foregroundColor(.black)
                                     Spacer()

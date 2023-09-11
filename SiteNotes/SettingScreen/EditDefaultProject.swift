@@ -9,6 +9,8 @@ import SwiftUI
 
 struct EditDefaultProject: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         ZStack {
             List {
@@ -26,6 +28,12 @@ struct EditDefaultProject: View {
                     }
                 }
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Image("Back")
+            }))
         }
     }
 }

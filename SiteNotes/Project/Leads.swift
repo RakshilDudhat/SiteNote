@@ -30,7 +30,7 @@ struct Leads: View {
                                         ProjectItem(findlist: lead)
                                     }
                                 }.padding(.all, 8.0)
-                            }.padding(.all, 8.0)
+                            }.padding(.bottom, 8.0)
                         }
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)

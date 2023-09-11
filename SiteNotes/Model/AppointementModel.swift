@@ -8,7 +8,7 @@
 import Foundation
 
 struct Appointment: Hashable, Identifiable, Codable {
-    var id = UUID()
+    var id: Int
     var appointmentTittle: String
     var name: String
     var mobileNumber: String

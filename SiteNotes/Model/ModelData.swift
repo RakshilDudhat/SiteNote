@@ -41,9 +41,9 @@ final class ModelData: ObservableObject {
                                                   ClientName(name: "Jane Cooper"),
                                                   ClientName(name: "Courtney Henry"),]
     
-    @Published var arrAppointmentList: [Appointment] = [Appointment(appointmentTittle: "Interior Design : Lorem Ip...", name: "John Smith", mobileNumber: "+91 (XXX)XXX-XXXX", email: "test22@gmail.com", time:                                                         "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),
-                                                        Appointment(appointmentTittle: "Interior Design : Lorem Ip...", name: "John Smith", mobileNumber: "+91 (XXX)XXX-XXXX", email: "test22@gmail.com", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Active"),
-                                                        Appointment(appointmentTittle: "Interior Design : Lorem Ip...", name: "John Smith", mobileNumber: "+91 (XXX)XXX-XXXX", email: "test22@gmail.com", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed")]
+    @Published var arrAppointmentList: [Appointment] = [Appointment(id: 1, appointmentTittle: "Interior Design : Lorem Ip...", name: "John Smith", mobileNumber: "+91 (XXX)XXX-XXXX", email: "test22@gmail.com", time:                                                         "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),
+                                                        Appointment(id: 2, appointmentTittle: "Interior Design : Lorem Ip...", name: "John Smith", mobileNumber: "+91 (XXX)XXX-XXXX", email: "test22@gmail.com", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Active"),
+                                                        Appointment(id: 3, appointmentTittle: "Interior Design : Lorem Ip...", name: "John Smith", mobileNumber: "+91 (XXX)XXX-XXXX", email: "test22@gmail.com", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed")]
     
     @Published var arrTiming: [Notification] = [Notification(timing: "At time of event"),
                                                 Notification(timing: "5 min before"),
@@ -53,8 +53,8 @@ final class ModelData: ObservableObject {
                                                 Notification(timing: "1 day before"),]
     
     @Published var arrTask: [Task] = [Task(id: 1, tittleName: "Interior Design : Lorem Ip...", street: "6627 192A Street", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2:                                       "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),
-                                      Task(id: 2, tittleName: "Interior Design : Lorem Ip...", street: "6627 192A Street", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),
-                                      Task(id: 3, tittleName: "Interior Design : Lorem Ip...", street: "6627 192A Street", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Active"),
+                                      Task(id: 2, tittleName: "Interior Design : Lorem Ip...", street: "6627 192A Street", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 10:00 AM - 12:00 PM", CompleteAndActive: "Completed"),
+                                      Task(id: 3, tittleName: "Interior Design : Lorem Ip...", street: "6627 192A Street", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 09:00 AM - 12:00 PM", CompleteAndActive: "Active"),
                                       Task(id: 4, tittleName: "Interior Design : Lorem Ip...", street: "6627 192A Street", name: "John Smith", subTittle: "Lorem lpsum is simply dummy.", image1: "IC_TaskImg1", image2: "IC_TaskImg2", time: "Today, 11:00 AM - 12:00 PM", CompleteAndActive: "Completed"),]
     
     @Published var arrLead: [FindList] = [FindList(id: 1, listImgName: "IC_Find1", listName: "5132 Alderfield place, west vencouver", listImgCircle: "IC_Check", street: "6627 192A Street"),

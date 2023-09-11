@@ -10,8 +10,9 @@ import SwiftUI
 struct TaskItem: View {
     
     let task: Task
+    @State private var action: Int? = 0
     @State var showingAlert = false
-    @State var isNavigation = false
+    @State var isNavigationInEditTask = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
@@ -20,68 +21,76 @@ struct TaskItem: View {
                 Spacer()
                 Button {
                     print("hello")
-                    isNavigation.toggle()
+                    isNavigationInEditTask.toggle()
                 } label: {
                     Image("IC_OpenInNew")
                         .frame(width: 28, height: 28)
                         .aspectRatio(contentMode: .fill)
                 }
-                .background(NavigationLink("", destination: ProjectDetalis(leads: FindList(id: task.id, listImgName: "IC_Find2", listName: task.name, listImgCircle: "IC_Check", street: task.street)), isActive: $isNavigation).opacity(0))
+                .background(NavigationLink("", destination: ProjectDetalis(leads: FindList(id: task.id, listImgName: "IC_Find2", listName: task.name, listImgCircle: "IC_Check", street: task.street)).navigationBarHidden(true), isActive: $isNavigationInEditTask).opacity(0))
             }.buttonStyle(.borderless)
-                
-            .frame(maxWidth: .infinity, maxHeight: 30)
+                .frame(maxWidth: .infinity, maxHeight: 30)
             Rectangle()
                 .frame(maxWidth: .infinity, maxHeight: 1)
                 .foregroundColor(Color(red: 217/255, green: 217/255, blue: 217/255))
-            Text(task.name).font(.system(size: 15))
-            HStack {
-                Text(task.subTittle).font(.system(size: 11)).foregroundColor(.gray)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(task.name).font(.system(size: 15))
                 HStack {
-                    Spacer()
-                    Button {
-                        print("Delete")
-                        showingAlert = true
-                    } label: {
-                        Image(systemName: "trash")
-                            .foregroundColor(.red)
-                            .frame(width: 24, height: 24)
-                            .aspectRatio(contentMode: .fill)
-                    }
-                }
-            }
-            HStack {
-                Image(task.image1)
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                Image(task.image2)
-                    .offset(x: -12)
-                Text(task.time).font(.system(size: 11))
-                HStack {
-                    Spacer()
-                    Button {
-                        print("Hello")
-                    } label: {
-                        if task.CompleteAndActive == "Completed" {
-                            Text(task.CompleteAndActive).font(.system(size: 11))
-                                .frame(width: 77, height: 21)
-                                .tint(.white)
-                                .background(Color.green)
-                                .cornerRadius(8)
-                        } else if task.CompleteAndActive == "Active" {
-                            Text(task.CompleteAndActive).font(.system(size: 11))
-                                .frame(width: 77, height: 21)
-                                .tint(.white)
-                                .background(Color.blue)
-                                .cornerRadius(8)
+                    Text(task.subTittle).font(.system(size: 11)).foregroundColor(.gray)
+                    HStack {
+                        Spacer()
+                        Button {
+                            print("Delete")
+                            showingAlert = true
+                        } label: {
+                            Image(systemName: "trash")
+                                .foregroundColor(.red)
+                                .frame(width: 24, height: 24)
+                                .aspectRatio(contentMode: .fill)
                         }
                     }
                 }
+                HStack {
+                    Image(task.image1)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                    Image(task.image2)
+                        .offset(x: -12)
+                    Text(task.time).font(.system(size: 11))
+                    HStack {
+                        Spacer()
+                        Button {
+                            print("Hello")
+                        } label: {
+                            if task.CompleteAndActive == "Completed" {
+                                Text(task.CompleteAndActive).font(.system(size: 11))
+                                    .frame(width: 77, height: 21)
+                                    .tint(.white)
+                                    .background(Color.green)
+                                    .cornerRadius(8)
+                            } else if task.CompleteAndActive == "Active" {
+                                Text(task.CompleteAndActive).font(.system(size: 11))
+                                    .frame(width: 77, height: 21)
+                                    .tint(.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(8)
+                            }
+                        }
+                    }
+                }
+            }.onTapGesture {
+                self.action = 1
             }
-        }.buttonStyle(.borderless)
-        .alert(isPresented: $showingAlert) {
-            let firstButton = Alert.Button.default(Text("Cancel")) { showingAlert = false }
-            let secondButton = Alert.Button.destructive(Text("Delete")) { showingAlert = false }
-            return Alert(title: Text("Delete Appointement?"), message: Text("Are you sure you want permanently delete this appointement?"), primaryButton: firstButton, secondaryButton: secondButton)
+            .buttonStyle(.borderless)
+            .overlay(NavigationLink(destination: EditTask(task: task).navigationBarHidden(true), tag: 1, selection: $action, label: {
+            }).opacity(0))
+            .alert(isPresented: $showingAlert) {
+                let firstButton = Alert.Button.default(Text("Cancel")) { showingAlert = false }
+                let secondButton = Alert.Button.destructive(Text("Delete")) { showingAlert = false }
+                return Alert(title: Text("Delete Appointement?"), message: Text("Are you sure you want permanently delete this appointement?"), primaryButton: firstButton, secondaryButton: secondButton)
+            }
+            
         }
     }
 }
