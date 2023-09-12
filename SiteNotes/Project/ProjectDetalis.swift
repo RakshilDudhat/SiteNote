@@ -123,7 +123,7 @@ struct ProjectDetalis: View {
                             Rectangle()
                                 .foregroundColor(.white)
                                 .cornerRadius(8)
-                                .frame(height: 400)
+                                .frame(height: 410)
                             VStack(alignment: .leading, spacing: 28) {
                                 HStack {
                                     VStack(alignment: .leading, spacing: 8) {

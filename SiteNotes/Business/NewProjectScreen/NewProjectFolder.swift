@@ -20,7 +20,6 @@ struct NewProjectFolder: View {
                         TextField("Business Name", text: $arrNewProjectList[0]).textFieldStyle(RoundedBorderTextFieldStyle())
                             .modifier(TextFieldClearButton(text: $arrNewProjectList[0]))
                             .multilineTextAlignment(.leading)
-                        
                     } .listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
                     Section("Project Steps") {
@@ -30,7 +29,7 @@ struct NewProjectFolder: View {
                             TextField("Job", text: $arrNewProjectList[3])
                             TextField("Installation", text: $arrNewProjectList[4])
                             TextField("Completion", text: $arrNewProjectList[5])
-                        }.textFieldStyle(RoundedBorderTextFieldStyle())
+                        }
                         .multilineTextAlignment(.leading)
                     }.textCase(.none)
                     .swipeActions(content: {

@@ -52,9 +52,9 @@ struct Home: View {
                 Form {
                     //MARK: - TODAY
                     Section("TODAY") {
-                        ForEach(modelData.todaydetalis, id: \.id) { todatDetalis in
+                        ForEach(modelData.todaydetalis, id: \.id) { todayDetalis in
                             NavigationLink {
-                                if todatDetalis.id == 1 {
+                                if todayDetalis.id == 1 {
                                     AppointmentList()
                                         .navigationBarHidden(true)
                                 } else {
@@ -62,7 +62,7 @@ struct Home: View {
                                         .navigationBarHidden(true)
                                 }
                             } label: {
-                                HomeItem(todayDetalis: todatDetalis)
+                                HomeItem(todayDetalis: todayDetalis)
                             }
                             .listRowSeparator(.hidden)
                         }
